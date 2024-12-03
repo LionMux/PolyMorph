@@ -1,6 +1,8 @@
 ﻿public class Battery : EnergySourse
 {
-    public bool EmergencyStopForBatterySave { get; set; } = false;
+    public const int SaveBateryModeValue = 20;
+
+    public bool EmergencyStopForBatterySave { get; private set; } = false;
 
     public Battery(int maxValue) : base(maxValue) { } // maxValue - величина измеряющаяся в кВт*ч, максимальный объем батареи
 
@@ -18,5 +20,10 @@
     public override void CheckAmountOfEnergy()
     {
         Console.WriteLine($"Оставшийся заряд батареи {CurrentValueOfFieldP} % ");
+    }
+
+    protected override void OnCurrentValueOfFieldChanged()
+    {
+        EmergencyStopForBatterySave = CurrentValueOfFieldP < SaveBateryModeValue;
     }
 }

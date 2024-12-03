@@ -1,10 +1,9 @@
 ﻿internal abstract class Transport
 {
     protected abstract EnergySourse EnergySourse { get; }
-    protected Engine Engine { get;  set; }
-    protected AirConditioner AirConditioner { get;  set; }
-    
-    public int NumberOfPlace { get;}
+    protected abstract EngineBase Engine { get; }
+
+    public int NumberOfPlace { get; }
 
     protected Transport(int numberOfPlace)
     {
