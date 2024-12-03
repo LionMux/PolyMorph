@@ -23,7 +23,7 @@
         get => _speed;
         protected set
         {
-            if (value > MaxSpeed || value >= 0)
+            if (value > MaxSpeed || value < 0)
             {
                 Console.WriteLine("Введенное значение скорости привышает возможности автомобиля, поэтому он не смог поехать");
                 _speed = 0;

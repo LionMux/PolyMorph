@@ -6,5 +6,6 @@
         car.Refuel(30);
         car.Move(100);
         Console.WriteLine(car);
+        Console.ReadLine();
     }
 }

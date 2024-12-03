@@ -1,17 +1,11 @@
 ﻿internal class ElectroCar : Transport
-{
-    private int _distance;
+{ 
     private readonly Battery _battery;
     private readonly ElectricEngine _engine;
 
     public int NumberOfDoors { get; }
     public AirConditioner AirConditioner { get; }
-    public int Distance
-    {
-        get => _distance;
-        set => _distance = value;
-    }
-
+   
     protected override EnergySourse EnergySourse => _battery;
     protected override EngineBase Engine => _engine;
 
